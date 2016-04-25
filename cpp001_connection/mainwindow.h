@@ -15,6 +15,10 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+public slots:
+    void onTyping();
+    void onComboBoxSelection(QString text);
+
 private:
     Ui::MainWindow *ui;
 };
