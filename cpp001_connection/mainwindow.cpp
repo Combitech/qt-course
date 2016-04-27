@@ -40,7 +40,3 @@ void MainWindow::onComboBoxSelection(QString text)
 {
     ui->statusBar->showMessage("Selected gender: " + text);
 }
-
-void MainWindow::on_dateEdit_dateChanged(const QDate &date) {
-    ui->statusBar->showMessage("Current date: " + date.toString());
-}
