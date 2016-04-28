@@ -4,7 +4,7 @@ SUBDIRS += \
 #    cpp001_qmake \
 #    cpp002_qmake_syntax \
     cpp003_eventfilter \
-#    cpp004_threadpool \
+    cpp004_threadpool \
     cpp005_connection \
 #    cpp006_widget_derive \
 #    cpp007_paintengine \
