@@ -6,7 +6,7 @@
 
 QT       += core gui widgets
 
-TARGET = cpp001_connection
+TARGET = cpp005_connection
 TEMPLATE = app
 
 
