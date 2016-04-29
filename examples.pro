@@ -10,7 +10,7 @@ SUBDIRS += \
     cpp007_paintengine \
 #    cpp008_layouts \
     cpp009_morphing \
-#    cpp010_simple_model_view \
+    cpp010_simple_model_view \
 #    cpp011_roles_model_view \
 #    cpp012_sorting_filtering \
 #    cpp013_delegates \
