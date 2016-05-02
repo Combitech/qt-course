@@ -16,10 +16,9 @@ SUBDIRS += \
 #    cpp013_delegates \
 #    cpp014_subclass_model \
 #    cpp015_networkmanager \
-
 #    qml001_qmlscene \
-#    qml002_text \
-#    qml003_image \
+    qml002_text \
+    qml003_image \
 #    qml004_input \
 #    qml005_qml_signals \
 #    qml006_custom_component \
