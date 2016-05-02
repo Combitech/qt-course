@@ -20,8 +20,7 @@ SUBDIRS += \
     qml002_text \
     qml003_image \
 #    qml004_input \
-#    qml005_qml_signals \
-#    qml006_custom_component \
+    qml005_qml_signals \
 #    qml007_custom_elements_using \
 #    qml008_anchors \
 #    qml009_layout_types \
