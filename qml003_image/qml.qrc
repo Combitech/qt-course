@@ -1,5 +1,12 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>big_pine_landscape.jpg</file>
+        <file>homer-simpson.svg</file>
+        <file>servers.jpg</file>
+        <file>tatto.png</file>
+        <file>zebra.png</file>
+        <file>frame.jpg</file>
+        <file>frame_heart.gif</file>
     </qresource>
 </RCC>
