@@ -13,14 +13,15 @@ SUBDIRS += \
     cpp010_simple_model_view \
     cpp011_roles_model_view \
     cpp012_sorting_filtering \
-#    cpp013_delegates \
+    cpp013_delegates \
+    cpp014_subclass_model
 #    cpp014_subclass_model \
 
 #    qml001_qmlscene \
-    qml002_text \
-    qml003_image \
+#    qml002_text \
+#    qml003_image \
 #    qml004_input \
-    qml005_qml_signals \
+#    qml005_qml_signals \
 #    qml007_custom_elements_using \
 #    qml008_anchors \
 #    qml009_layout_types \
@@ -38,8 +39,7 @@ SUBDIRS += \
 #    qml021_advanced_graphics \
 #    qml022_profiling \
 #    qml023_sg_debug \
-    qml007_custom_elements_using \
-    qml008_anchors \
-    qml009_layout_types \
-    qml010_mapToItem \
-    qml011_animations
+#    qml007_custom_elements_using \
+#    qml008_anchors \
+#    qml009_layout_types \
+#    qml010_mapToItem \
