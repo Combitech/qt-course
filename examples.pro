@@ -15,7 +15,6 @@ SUBDIRS += \
     cpp012_sorting_filtering \
     cpp013_delegates \
     cpp014_subclass_model
-#    cpp014_subclass_model \
 
 #    qml001_qmlscene \
 #    qml002_text \
