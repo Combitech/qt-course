@@ -38,3 +38,5 @@ SUBDIRS += \
 #    qml021_advanced_graphics \
 #    qml022_profiling \
 #    qml023_sg_debug \
+    qml007_custom_elements_using \
+    qml008_anchors

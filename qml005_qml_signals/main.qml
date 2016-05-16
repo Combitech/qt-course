@@ -88,6 +88,7 @@ Rectangle {
         }
     }
 
+    // Add a child and see what is happening
     /*Image {
         id: snailChild
         width: 100
