@@ -39,4 +39,7 @@ SUBDIRS += \
 #    qml022_profiling \
 #    qml023_sg_debug \
     qml007_custom_elements_using \
-    qml008_anchors
+    qml008_anchors \
+    qml009_layout_types \
+    qml010_mapToItem \
+    qml011_animations
