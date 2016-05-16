@@ -14,7 +14,8 @@ SUBDIRS += \
     cpp011_roles_model_view \
     cpp012_sorting_filtering \
     cpp013_delegates \
-    cpp014_subclass_model
+    cpp014_subclass_model \
+    cpp015_networkmanager
 
 #    qml001_qmlscene \
 #    qml002_text \
