@@ -47,7 +47,7 @@ QVariant WeatherModel::data(const QModelIndex &index, int role) const
             return r->weather;
             break;
         case 2:
-            return r->lastSync.toLocalTime().toString("HH:mm:ss");
+            return r->lastSync.toLocalTime().toString("HH:mm:ss.zzz");
             break;
         default:
             break;
@@ -64,10 +64,11 @@ void WeatherModel::addCity(QString city)
         Report *r = new Report();
         r->pos = rowCount();
         r->city = city;
-        qDebug() << Q_FUNC_INFO << r->pos;
+
         beginInsertRows(QModelIndex(), r->pos, r->pos);
         m_results.insert(url, r);
         endInsertRows();
+
         m_networkmanager.get(QNetworkRequest(url));
     }
 }
@@ -93,7 +94,7 @@ void WeatherModel::replyFinished(QNetworkReply *reply)
                              createIndex(r->pos, 3));
 
             QTimer *t = new QTimer();
-            t->setInterval(5000);
+            t->setInterval(3000);
             t->setSingleShot(true);
             // Passing data in this way is simple, but not really pretty....
             t->setObjectName(reply->url().toString());
