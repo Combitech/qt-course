@@ -16,6 +16,7 @@ SUBDIRS += \
     cpp013_delegates \
     cpp014_subclass_model \
     cpp015_networkmanager \
+
 #    qml001_qmlscene \
     qml002_text \
     qml003_image \
