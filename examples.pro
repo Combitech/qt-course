@@ -15,22 +15,21 @@ SUBDIRS += \
     cpp012_sorting_filtering \
     cpp013_delegates \
     cpp014_subclass_model \
-    cpp015_networkmanager
-
+    cpp015_networkmanager \
 #    qml001_qmlscene \
-#    qml002_text \
-#    qml003_image \
-#    qml004_input \
-#    qml005_qml_signals \
-#    qml007_custom_elements_using \
-#    qml008_anchors \
-#    qml009_layout_types \
-#    qml010_mapToItem \
-#    qml011_animations \
-#    qml012_model_view \
-#    qml013_loader \
-#    qml014_dynamic_objects \
-#    qml015_context_properties \
+    qml002_text \
+    qml003_image \
+    qml004_other_input \
+    qml005_qml_signals \
+    qml007_custom_elements_using \
+    qml008_anchors \
+    qml009_layout_types \
+    qml010_mapToItem \
+    qml011_animations \
+    qml012_model_view \
+    qml013_loader \
+    qml014_dynamic_objects \
+    qml015_context_properties \
 #    qml016_extension_plugin \
 #    qml017_qsgnode \
 #    qml018_multimedia \
@@ -39,7 +38,3 @@ SUBDIRS += \
 #    qml021_advanced_graphics \
 #    qml022_profiling \
 #    qml023_sg_debug \
-#    qml007_custom_elements_using \
-#    qml008_anchors \
-#    qml009_layout_types \
-#    qml010_mapToItem \

@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include <QPainter>
 #include <QPaintEvent>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)

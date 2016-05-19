@@ -8,8 +8,8 @@ int main(int argc, char *argv[])
 
     QQuickView view;
     view.setSource(QUrl(QStringLiteral("qrc:/main.qml")));
-    view.setWidth(600);
-    view.setHeight(800);
+    view.setWidth(800);
+    view.setHeight(600);
     view.show();
 
     return app.exec();

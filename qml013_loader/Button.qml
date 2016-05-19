@@ -3,8 +3,8 @@ import QtQuick 2.5
 Rectangle {
     // Public scope
     // Default values
-    width: 100
-    height: 50
+    width: 300
+    height: 100
     color: "lightgreen"
 
     property alias buttonText: btnText.text
@@ -13,6 +13,7 @@ Rectangle {
     // Private Scope
     Text {
         id: btnText
+        font.pixelSize: 25
         anchors.centerIn: parent
         text: "Button"
     }
