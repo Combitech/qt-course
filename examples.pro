@@ -30,11 +30,12 @@ SUBDIRS += \
     qml013_loader \
     qml014_dynamic_objects \
     qml015_context_properties \
-#    qml016_extension_plugin \
-#    qml017_qsgnode \
-#    qml018_multimedia \
-#    qml019_canvas \
-#    qml020_web \
-#    qml021_advanced_graphics \
-#    qml022_profiling \
-#    qml023_sg_debug \
+    qml016_extension_plugin \
+    qml016_plugin \
+    qml017_qsgnode \
+    qml018_multimedia \
+    qml019_canvas \
+    qml020_web \
+    qml021_advanced_graphics \
+    qml022_profiling \
+    qml023_sg_debug \

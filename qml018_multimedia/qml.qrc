@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>big_buck_bunny.mp4</file>
+    </qresource>
+</RCC>

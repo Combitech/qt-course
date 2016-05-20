@@ -1,28 +1,34 @@
 import QtQuick 2.4
+//import com.jonas.components 1.0
+import plugin.jonas.components 1.0
 
 Rectangle {
     id: root
     anchors.fill: parent
     color: "lightgray"
 
-    ListModel {
+//    ListModel {
+//        id: carModel
+//        ListElement {
+//            name: "Volvo XC60"
+//            year: 2015
+//        }
+//        ListElement {
+//            name: "Ferrari F50"
+//            year: 2004
+//        }
+//        ListElement {
+//            name: "Saab 9-3"
+//            year: 2007
+//        }
+//        ListElement {
+//            name: "Ford Mustang"
+//            year: 1969
+//        }
+//    }
+
+    CarModel {
         id: carModel
-        ListElement {
-            name: "Volvo XC60"
-            year: 2015
-        }
-        ListElement {
-            name: "Ferrari F50"
-            year: 2004
-        }
-        ListElement {
-            name: "Saab 9-3"
-            year: 2007
-        }
-        ListElement {
-            name: "Ford Mustang"
-            year: 1969
-        }
     }
 
     ListView {

@@ -2,7 +2,9 @@
 #include <QQmlApplicationEngine>
 #include <QQuickView>
 #include <QQmlContext>
+#include <qqml.h>
 #include <carmodel.h>
+#include <QDebug>
 
 int main(int argc, char *argv[])
 {
@@ -10,6 +12,7 @@ int main(int argc, char *argv[])
 
     QQuickView view;
 
+    // Context property
     /*
     CarModel carModel;
 
@@ -22,6 +25,15 @@ int main(int argc, char *argv[])
 
     view.rootContext()->setContextProperty("carModel", &carModel);
     */
+
+    // Register type
+    //qmlRegisterType<CarModel>("com.jonas.components", 1, 0, "CarModel");
+
+    // Plugin
+//    QStringList paths = QCoreApplication::libraryPaths();
+//    paths << qApp->applicationDirPath() + "/../../qml016_plugin";
+//    qApp->setLibraryPaths(paths);
+//    qDebug() << paths;
 
     view.setSource(QUrl(QStringLiteral("qrc:/main.qml")));
     view.setWidth(800);
