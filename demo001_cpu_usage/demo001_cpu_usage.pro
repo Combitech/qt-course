@@ -14,9 +14,11 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    cpuusage.cpp
+    cpuusage.cpp \
+    cpuloader.cpp
 
 HEADERS  += mainwindow.h \
-    cpuusage.h
+    cpuusage.h \
+    cpuloader.h
 
 FORMS    += mainwindow.ui

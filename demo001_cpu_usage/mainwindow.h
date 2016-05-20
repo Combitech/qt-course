@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "cpuusage.h"
+#include "cpuloader.h"
 
 namespace Ui {
 class MainWindow;
@@ -20,6 +21,7 @@ private:
     Ui::MainWindow *ui;
 
     CPUUsage *m_cpuUsage;
+    CPULoader *m_cpuLoader;
 };
 
 #endif // MAINWINDOW_H

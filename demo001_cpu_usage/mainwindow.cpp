@@ -3,7 +3,8 @@
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
-    , m_cpuUsage(new CPUUsage())
+    , m_cpuUsage(new CPUUsage(this))
+    , m_cpuLoader(new CPULoader(this))
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
