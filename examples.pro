@@ -33,7 +33,7 @@ SUBDIRS += \
     qml015_context_properties \
     qml016_extension_plugin \
     qml016_plugin \
-    qml017_qsgnode \
+    qml017_qsg_node \
     qml018_multimedia \
     qml019_canvas \
     qml020_web \

@@ -1,9 +1,12 @@
-import QtQuick 2.4
+import QtQuick 2.6
+import QtWebEngine 1.2
 
 Rectangle {
     id: root
     anchors.fill: parent
     color: "lightgray"
+
+
 }
 
 
