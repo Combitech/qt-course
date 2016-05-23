@@ -6,6 +6,11 @@ Rectangle {
     height: 600
     color: "lightgray"
 
+    function moveBox(obj, toX, toY) {
+        var newPos = mapToItem(obj,toX,toY)
+        obj.x = obj.x + newPos.x
+        obj.y = obj.y + newPos.y
+    }
 
     MovableBox {
         border.color: "blue"

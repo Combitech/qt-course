@@ -7,17 +7,6 @@ Rectangle {
     border.color: "black"
     border.width: 5
 
-    function moveBox() {
-        var myPos = movableBox.mapFromItem(root,parseInt(inputX.text),parseInt(inputY.text))
-
-        //var myPos = movableBox.mapToItem(root,0,0)
-        console.log(myPos)
-//        var newPos = mapToItem(root,parseInt(inputX.text),parseInt(inputY.text))
-//        console.log(newPos)
-//        x = newPos.x
-//        y = newPos.y
-    }
-
     MouseArea {
         anchors.fill: parent
         drag.target: parent
@@ -58,10 +47,9 @@ Rectangle {
 
         Button {
             onBtnClicked: {
-                //                movableBox.x = inputX.text
-                //                movableBox.y = inputY.text
-                moveBox()
-
+                //root.moveBox(movableBox,parseInt(inputX.text),parseInt(inputY.text))
+                movableBox.x = parseInt(inputX.text)
+                movableBox.y = parseInt(inputY.text)
             }
         }
 
