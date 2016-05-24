@@ -5,6 +5,6 @@
 
 void Qml016_PluginPlugin::registerTypes(const char *uri)
 {
-    qmlRegisterType<CarModel>("plugin.jonas.components", 1, 0, "CarModel");
+    qmlRegisterType<CarModel>(uri, 1, 0, "CarModel");
 }
 

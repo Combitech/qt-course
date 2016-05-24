@@ -1,5 +1,8 @@
 import QtQuick 2.4
+// C++
 //import com.jonas.components 1.0
+
+// Plugin
 import plugin.jonas.components 1.0
 
 Rectangle {

@@ -1,7 +1,9 @@
 TEMPLATE = app
 
 QT += qml quick
-CONFIG += c++11
+
+# To debug, add qml_debug
+CONFIG += c++11 qml_debug
 
 SOURCES += main.cpp
 

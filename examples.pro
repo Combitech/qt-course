@@ -29,7 +29,7 @@ SUBDIRS += \
     qml013_loader \
     qml014_dynamic_objects \
     qml015_context_properties \
-    qml016_extension_plugin \
+#    qml016_extension_plugin \
     qml016_plugin \
     qml017_qsg_node \
     qml018_multimedia \
