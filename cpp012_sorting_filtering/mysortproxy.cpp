@@ -17,6 +17,5 @@ qDebug() << "Data:" << leftData << rightData;
         return QString::localeAwareCompare(leftData.toString(),
                                            rightData.toString());
     }
-
     return false;
 }

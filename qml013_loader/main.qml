@@ -12,6 +12,13 @@ Rectangle {
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         anchors.margins: 10
+        color: "light gray"
+    }
+    Rectangle{
+        anchors.fill: dynamicView
+        color: "transparent"
+        border.color: "black"
+        border.width: 2
     }
 
     Item {

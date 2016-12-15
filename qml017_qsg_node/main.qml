@@ -26,6 +26,13 @@ Rectangle {
             NumberAnimation { to: 0; duration: 2000; easing.type: Easing.InOutQuad }
             loops: Animation.Infinite
         }
+        Text {
+            anchors.left: parent.left
+            anchors.leftMargin: parent.width/2-width/2
+            anchors.top: parent.top
+            anchors.topMargin: parent.height/3-height/2
+            text: "Press and hold \nDragable triangle"
+        }
 
         MouseArea {
             id: mmaTriangle

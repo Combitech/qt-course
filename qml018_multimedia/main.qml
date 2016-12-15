@@ -6,10 +6,11 @@ Rectangle {
     anchors.fill: parent
     color: "lightgray"
 
+
     MediaPlayer {
         id: mediaplayer
-        //source: "big_buck_bunny.mp4"
-        source: "centaur_1.mpeg"
+        source: "big_buck_bunny.mp4"
+        //source: "centaur_1.mpeg"
         onError: console.log("error: ", errorString)
 
         onDurationChanged: console.log("duration: ", duration)
@@ -76,5 +77,7 @@ Rectangle {
         }
     }
 }
+
+
 
 

@@ -6,6 +6,15 @@ Rectangle {
     color: "lightsteelblue"
     border.color: "black"
     border.width: 2
-
-    anchors.centerIn: parent
+    x: parent.width/2 - width/2
+    y: parent.height/2 - height/2
+    radius: 10
+    MouseArea {
+        drag.minimumX: 0
+        drag.maximumX: parent.parent.width - parent.width
+        drag.minimumY: 0
+        drag.maximumY: parent.parent.height - parent.height
+        anchors.fill: parent
+        drag.target: parent
+    }
 }

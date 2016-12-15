@@ -53,10 +53,8 @@ Rectangle {
         height: 300
         onPaint: {
             var ctx = getContext("2d");
-
             ctx.fillStyle = "darkgray"
             ctx.fillRect(0, 0, width, height);
-
             // circle
             context.beginPath();
             context.fillStyle = "orange"
@@ -67,7 +65,6 @@ Rectangle {
             context.arc(width/2, height/2, 60, 0, 2*Math.PI, true)
             context.fill();
             context.stroke();
-
             // Draw some text
             context.lineWidth = 1
             context.beginPath();
@@ -77,25 +74,64 @@ Rectangle {
             context.stroke();
         }
     }
+    Rectangle{
+        anchors.fill: mycanvas3
+        color: "white"
+        border.color: "black"
+        border.width: 2
+
+    }
+    Rectangle{
+
+        border.color: "black"
+        border.width: 2
+        anchors.left: mycanvas3.left
+        width: clearButtonText.width + 10
+        height: clearButtonText.height + 10
+        y: mycanvas3.y - height+2
+        Text {
+            anchors.centerIn: parent
+            id: clearButtonText
+            text: "Clear paint"
+        }
+        MouseArea{
+            id: clearButton
+            anchors.fill: parent
+            onPressed: {
+                parent.color = "light grey"
+                parent.border.width++
+                mycanvas3.requestPaint()
+            }
+            onReleased: {
+                parent.color = "white"
+                parent.border.width--
+            }
+        }
+    }
 
     Canvas {
         id: mycanvas3
         x: 450; y: 50
         width: 300
         height: 300
-
         property bool start: false
-
         onPaint: {
             var ctx = getContext("2d");
-
-            if(start) {
-                ctx.moveTo(mouseCanvas.mouseX, mouseCanvas.mouseY);
+            if(clearButton.pressed){
+                ctx.strokeStyle = "black"
+                ctx.fillStyle = "white"
+                ctx.beginPath()
+                ctx.rect(0, 0,mycanvas3.width, mycanvas3.height)
+                ctx.fill()
+                ctx.stroke()
+            }
+            else if(start) {
+                ctx.moveTo(mouseCanvas.mouseX, mouseCanvas.mouseY)
                 start = false
             } else {
                 ctx.lineWidth = 4
                 ctx.strokeStyle = "black"
-                ctx.lineTo(mouseCanvas.mouseX, mouseCanvas.mouseY);
+                ctx.lineTo(mouseCanvas.mouseX, mouseCanvas.mouseY)
                 ctx.stroke()
             }
         }
@@ -138,7 +174,6 @@ Rectangle {
         onStateChanged: console.log(state)
 
         states: State {
-//            when: arrowFormState
             name: "on"
             PropertyChanges { angle: 180; target: mycanvas4 }
             PropertyChanges { morphProgress: 1; target: mycanvas4 }
@@ -185,7 +220,7 @@ Rectangle {
             // other animation parameter values
             function interpolate(first, second, ratio) {
                 return first + (second - first) * ratio;
-            };
+            }
             var vArrowEndDelta = interpolate(vDelta, vDelta * 1.25, morphProgress)
             var vArrowTipDelta = interpolate(vDelta, 0, morphProgress)
             var arrowEndX = interpolate(left, right - vArrowEndDelta, morphProgress)
@@ -205,7 +240,7 @@ Rectangle {
             ctx.stroke()
         }
         MouseArea {
-            anchors.fill: parent;
+            anchors.fill: parent
             onClicked: mycanvas4.toggle()
         }
     }

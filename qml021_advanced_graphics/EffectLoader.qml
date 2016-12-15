@@ -11,23 +11,27 @@ Item {
     property alias model: effectModel
 
     function loadEffect(effect) {
-        if(effect === "Blur") {
-            loader.sourceComponent = effect_blur
-        }
-        else if(effect === "DropShadow") {
-            loader.sourceComponent = effect_drop_shadow
-        }
-        else if(effect === "Colorize") {
-            loader.sourceComponent = effect_colorize
-        }
-        else if(effect === "GammaAdjust") {
-            loader.sourceComponent = effect_gamma_adjust
-        }
-        else if(effect === "Glow") {
-            loader.sourceComponent = effect_glow
-        }
-        else if(effect === "OpacityMask") {
-            loader.sourceComponent = effect_opacity_mask
+        switch(effect){
+            case "Blur":
+                loader.sourceComponent = effect_blur
+                break;
+            case "DropShadow":
+                loader.sourceComponent = effect_drop_shadow
+                break;
+            case "Colorize":
+                loader.sourceComponent = effect_colorize
+                break;
+            case "GammaAdjust":
+                loader.sourceComponent = effect_gamma_adjust
+                break;
+            case "Glow":
+                loader.sourceComponent = effect_glow
+                break;
+            case "OpacityMask":
+                loader.sourceComponent = effect_opacity_mask
+                break;
+            default:
+                break;
         }
     }
 

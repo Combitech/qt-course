@@ -12,7 +12,9 @@ Rectangle {
         width: 200
         height: 200
         color: "orange"
-
+        radius: 10
+        border.color: "darkgrey"
+        border.width: 2
         scale: rectMa.pressed ? 1.5 : 1
         rotation: rectMa.pressed ? 270 : 0
 
@@ -30,8 +32,7 @@ Rectangle {
             }
         }
 
-        /*
-        states: [
+        /*states: [
             State {
                 when: rectMa.pressed
                 name: "PressedState"
@@ -45,6 +46,8 @@ Rectangle {
         ]
 
         transitions: [
+
+
             Transition {
                 from: "*"
                 to: "PressedState"
@@ -77,40 +80,34 @@ Rectangle {
                 var l = Math.round(k+j)
             }
             tot = i+j+k
-        }
-        */
-
+        }*/
         MouseArea {
             id: rectMa
             anchors.fill: parent
         }
     }
+//    Rectangle {
+//        id: movingRect
+//        anchors.bottom: parent.bottom
+//        width: 100
+//        height: 100
+//        color: "blue"
 
+//        MouseArea {
+//            anchors.fill: parent
+//            onClicked: {
+//                animationX.running = !animationX.running
+//            }
+//        }
 
-/*
-    Rectangle {
-        id: movingRect
-        anchors.bottom: parent.bottom
-        width: 100
-        height: 100
-        color: "blue"
-
-        MouseArea {
-            anchors.fill: parent
-            onClicked: {
-                animationX.running = !animationX.running
-            }
-        }
-
-        SequentialAnimation on x {
-            id: animationX
-            running: false
-            loops: Animation.Infinite // The animation is set to loop indefinitely
-            NumberAnimation { from: 0; to: 700; duration: 2000; easing.type: Easing.Linear }
-            NumberAnimation { from: 700; to: 0; duration: 2000; easing.type: Easing.Linear }
-        }
-    }
-    */
+//        SequentialAnimation on x {
+//            id: animationX
+//            running: false
+//            loops: Animation.Infinite // The animation is set to loop indefinitely
+//            NumberAnimation { from: 0; to: 700; duration: 2000; easing.type: Easing.Linear }
+//            NumberAnimation { from: 700; to: 0; duration: 2000; easing.type: Easing.Linear }
+//        }
+//    }
 }
 
 

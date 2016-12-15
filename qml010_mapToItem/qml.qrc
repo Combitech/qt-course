@@ -2,6 +2,6 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>MovableBox.qml</file>
-        <file>Button.qml</file>
+        <file>MyButton.qml</file>
     </qresource>
 </RCC>

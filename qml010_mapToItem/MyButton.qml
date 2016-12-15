@@ -4,6 +4,9 @@ Rectangle {
     width: 150
     height: 50
     color: "green"
+    border.color: "black"
+    border.width: 3
+    radius: 10
 
     signal btnClicked()
 
@@ -15,6 +18,8 @@ Rectangle {
 
     MouseArea {
         anchors.fill: parent
+        onPressed: parent.color = "dark green"
+        onReleased: parent.color = "green"
         onClicked: btnClicked()
     }
 }

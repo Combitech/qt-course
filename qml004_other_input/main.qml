@@ -5,39 +5,79 @@ Rectangle {
     anchors.fill: parent
     color: "lightgray"
 
+    Rectangle{
+        x: flick.x
+        y: flick.y-height+2
+        height: 30
+        width: text1.width + 10
+        anchors.left: flick.left
+        border.width: 2
+        color: "white"
+        border.color: "black"
+        Text{
+            id: text1
+            font.pointSize: 15
+            anchors.centerIn: parent
+            text: "Image 1, Flickable"
+        }
+    }
     Rectangle {
+        id: flick
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         anchors.left: parent.left
         anchors.right: parent.horizontalCenter
-        anchors.margins: 10
+        anchors.margins: 30
         color: "white"
         border.color: "black"
         border.width: 2
         clip: true
 
-        //        Flickable {
-        //            anchors.fill: parent
-        //            anchors.margins: 2
-        //            contentHeight: img.height
-        //            contentWidth: img.width
-        //            flickableDirection: Flickable.HorizontalAndVerticalFlick
+        Flickable {
+            anchors.fill: parent
+            anchors.margins: 2
+            contentHeight: img.height
+            contentWidth: img.width
+            flickableDirection: Flickable.HorizontalAndVerticalFlick
 
-        Image {
-            id: img
-            x:-width/2
-            y:-height/2
-            source: "san-francisco.jpg"
+            Image {
+                id: img
+                width: flick.width*2
+                height: flick.height*2
+                source: "san-francisco.jpg"
+            }
         }
-        //        }
+        Rectangle{
+            // make a border over the image
+            color: "transparent"
+            anchors.fill: flick
+            border.color: "black"
+            border.width: 2
+        }
     }
-
+    Rectangle{
+        x: pinchImage.x
+        y: pinchImage.y-height+2
+        height: 30
+        width: text2.width + 10
+        anchors.left: pinchImage.left
+        border.width: 2
+        color: "white"
+        border.color: "black"
+        Text{
+            id: text2
+            font.pointSize: 15
+            anchors.centerIn:parent
+            text: "Image 2, Pinch and Arrow Keys"
+        }
+    }
     Rectangle {
+        id:pinchImage
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         anchors.right: parent.right
         anchors.left: parent.horizontalCenter
-        anchors.margins: 10
+        anchors.margins: 30
         color: "white"
         border.color: "black"
         border.width: 2
@@ -51,17 +91,16 @@ Rectangle {
             focus: true
 
             Keys.onPressed: {
-                if(event.key === Qt.Key_Left) {
+                if(event.key === Qt.Key_Left && x > -width/2) {
                     img2.x -=5
-                } else if(event.key === Qt.Key_Right) {
+                } else if(event.key === Qt.Key_Right && x < parent.width-width/2) {
                     img2.x +=5
-                } else if(event.key === Qt.Key_Up) {
+                } else if(event.key === Qt.Key_Up && y > -height/2) {
                     img2.y -=5
-                } else if(event.key === Qt.Key_Down) {
+                } else if(event.key === Qt.Key_Down && y < parent.height-height/2) {
                     img2.y +=5
                 }
             }
-
             // Touch screens (zoom,scale,pan)
             PinchArea {
                 anchors.fill: parent
@@ -91,6 +130,14 @@ Rectangle {
                 }
             }
         }
+        Rectangle{
+            // make a border over the image
+            color: "transparent"
+            anchors.fill: pinchImage
+            border.color: "black"
+            border.width: 2
+        }
     }
+
 }
 

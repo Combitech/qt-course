@@ -22,20 +22,36 @@ Image {
     }*/
 
     source: "frame.jpg"
-
-    MouseArea {
+    Rectangle{
         id: loadButton
+        width: 220
+        height: 75
+        z: 10
+        border.width: 5
+        border.color: "black"
+        color: "#DDD"
+        radius: 10
         anchors.top: parent.top
-        anchors.left: parent.left
+        anchors.topMargin: parent.height/2
         anchors.right: parent.right
-        anchors.margins: 10
-        height: 50
-        onClicked: root.loadScene = !root.loadScene
+        anchors.rightMargin: 70
 
-        Text {
-            anchors.centerIn: parent
-            font.pointSize: 20
-            text: root.loadScene ? "Unload" : "Load"
+        MouseArea{
+            anchors.fill: parent
+            onClicked: {
+                parent.border.width-=2
+                loadButton.color = "#DDD"
+                root.loadScene = !root.loadScene
+            }
+            onPressed: {
+                loadButton.color = "#EEE"
+                parent.border.width+=2
+            }
+            Text {
+                anchors.centerIn: parent
+                font.pointSize: 20
+                text: root.loadScene ? "Unload Images" : "Load Images"
+            }
         }
     }
 
@@ -61,25 +77,27 @@ Image {
                 source: myImage
 
                 // Show the difference when reloading the image
-                // by changing its sourceSize. Will force a
+                // by changing spinningRects sourceSize. Will force a
                 // reload of the images in the new size.
-                //sourceSize.width: width
-                //sourceSize.height: height
-
+//                sourceSize.width: width
+//                sourceSize.height: height
 
                 // Show the big difference when using ansynchronous
                 // image loading.
-                //asynchronous: true
+//                asynchronous: true
             }
         }
     }
 
     Loader {
-        anchors.top: loadButton.bottom
+        anchors.margins: 100
+        anchors.top: root.top
+        anchors.topMargin: 160
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom
-        anchors.margins: 100
+        anchors.bottomMargin: 150
+
         active: root.loadScene
         sourceComponent: ListView {
             id: list
@@ -95,13 +113,17 @@ Image {
 
     /*Rectangle {
         id: spinningRect
+        z: 5
         width: 200
         height: 200
         radius: 100
         border.color: "lightgreen"
         border.width: 26
         color: "transparent"
-        anchors.centerIn: parent
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 70
+        anchors.right: parent.right
+        anchors.rightMargin: 90
 
 
         NumberAnimation {

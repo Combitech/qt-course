@@ -26,8 +26,8 @@ Rectangle {
         repeat: true
         interval: 500
         onTriggered: {
-            var xPos = Math.random() * grass.width
-            var yPos = Math.random() * grass.height
+            var xPos = Math.random() * grass.width % grass.parent.width
+            var yPos = Math.random() * grass.height % grass.parent.height
             landMoved(xPos, yPos)
         }
     }
@@ -41,7 +41,7 @@ Rectangle {
 
         onClicked: {
             // Emit signal
-            moveSnail(mouse.x,mouse.y)
+            moveSnail(mouse.x-50,mouse.y-50)
         }
         onPressAndHold: {
             if(earthquake) {
@@ -56,10 +56,12 @@ Rectangle {
         id: snailHome
         width: snailMother.width
         height: snailMother.height
+        radius: width/2
         color: "transparent"
         border.color: "black"
         border.width: 2
     }
+
 
     Image {
         id: snailMother
@@ -89,24 +91,73 @@ Rectangle {
     }
 
     // Add a child and see what is happening
-    /*Image {
-        id: snailChild
-        width: 100
-        height: 100
-        source: "snail2.png"
-        scale: 0.5
+//    Image {
+//        id: snailChild
+//        width: 100
+//        height: 100
+//        source: "snail2.png"
+//        scale: 0.5
 
-        function setSnailPosition(snailX,snailY) {
-            snailChild.x = snailX - snailMother.width
-            snailChild.y = snailY
-        }
+//        function setSnailPosition(snailX,snailY) {
+//            snailChild.x = snailX - snailMother.width*0.75
+//            snailChild.y = snailY
+//        }
 
-        Component.onCompleted: {
-            // Connect signal to signal
-            // The child will follow its mother
-            snailMother.movedToPosition.connect(setSnailPosition)
+//        Component.onCompleted: {
+//            // Connect signal to signal
+//            // The child will follow its mother
+//            snailMother.movedToPosition.connect(setSnailPosition)
+//        }
+//    }
+    Rectangle{
+        id: questionMark
+        width: 50
+        height: width
+        x: parent.width-width
+        color: "dark grey"
+        border.color: "black"
+        border.width: 3
+        radius: 10
+        Text {
+            anchors.centerIn: parent
+            font.pointSize: 20
+            text: "?"
         }
-    }*/
+        MouseArea{
+            anchors.fill: parent
+            onPressed: {
+                questionMark.color = "light grey"
+                if(helpBox.visible)
+                    helpBox.visible = false
+                else
+                    helpBox.visible = true
+            }
+            onReleased: questionMark.color = "dark grey"
+        }
+    }
+    Rectangle{
+        id: helpBox
+        anchors.centerIn: parent
+        width: helpText.width + 10
+        height: 60
+        color:"white"
+        border.color: "black"
+        border.width: 3
+        radius: 10
+        visible: false
+        Text {
+            id: helpText
+            anchors.centerIn: parent
+            text: {"Click on map to move snail to that position"
+                + "\nClick and hold to toggle Earthquake."
+                + "\nClick and hold on snail to go home"
+            }
+        }
+        MouseArea{
+            anchors.fill: parent
+            onClicked: helpBox.visible = false
+        }
+    }
 
     Component.onCompleted: {
         // Connect signal to slot

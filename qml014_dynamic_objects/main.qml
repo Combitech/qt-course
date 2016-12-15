@@ -10,8 +10,14 @@ Rectangle {
         id: ballContainer
         anchors.fill: parent
     }
-
+    Rectangle{
+        anchors.fill: listView
+        color: "gray"
+        border.color: "black"
+        border.width: 2
+    }
     ListView {
+        id: listView
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         anchors.right: parent.right
@@ -23,43 +29,57 @@ Rectangle {
             height: 100
             border.color: "black"
             border.width: 2
+            radius: 10
             color: "lightblue"
             Text {
                 anchors.centerIn: parent
                 text: index
             }
-            MouseArea {
-                anchors.fill: parent
-                onClicked: ballContainer.children[index].destroy()
+            Rectangle{
+                anchors.bottom: parent.bottom
+                anchors.bottomMargin: 5
+                anchors.right: parent.right
+                anchors.rightMargin: 5
+                border.color: "black"
+                width: text.width + 10
+                height: text.height + 15
+                radius: 10
+                Text {
+                    id: text
+                    anchors.centerIn: parent
+                    text: "Remove"
+                }
+                MouseArea {
+                    anchors.fill: parent
+                    onClicked: ballContainer.children[index].destroy()
+                }
             }
         }
     }
-
     Timer {
         id: ballCreatorTimer
-        interval: 3000
+        interval: 1500
         running: true
         repeat: true
         onTriggered: {
             var xPos = Math.random() * 550
             var yPos = Math.random() * 550
             BC.createBallObject(xPos,yPos)
-
             //BC.createGreenBall(xPos,yPos)
         }
     }
 
-//    Component {
-//        id: green_ball
-//        Rectangle {
-//            width: 50
-//            height: 50
-//            radius: 25
-//            color: "green"
-//            border.color: "black"
-//            border.width: 2
-//        }
-//    }
+    Component {
+        id: green_ball
+        Rectangle {
+            width: 50
+            height: 50
+            radius: width/2
+            color: "green"
+            border.color: "black"
+            border.width: 2
+        }
+    }
 }
 
 
