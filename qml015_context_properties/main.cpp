@@ -26,14 +26,17 @@ int main(int argc, char *argv[])
     view.rootContext()->setContextProperty("carModel", &carModel);
     */
 
-    // Register type
-    //qmlRegisterType<CarModel>("com.jonas.components", 1, 0, "CarModel");
+    // Register typ
+    /*
+    qmlRegisterType<CarModel>("com.jonas.components", 1, 0, "CarModel");
+    */
 
     // Plugin
 //    QStringList paths = QCoreApplication::libraryPaths();
-//    paths << qApp->applicationDirPath() + "/../../qml016_plugin";
+//    paths << qApp->applicationDirPath() + "/../";
 //    qApp->setLibraryPaths(paths);
 //    qDebug() << paths;
+    view.engine()->addImportPath(qApp->applicationDirPath() + "/../qml016_plugin");
 
     view.setSource(QUrl(QStringLiteral("qrc:/main.qml")));
     view.setWidth(800);

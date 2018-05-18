@@ -16,8 +16,6 @@ SUBDIRS += \
     cpp013_delegates \
     cpp014_subclass_model \
     cpp015_networkmanager \
-
-#    qml001_qmlscene \
     qml002_text \
     qml003_image \
     qml004_other_input \
@@ -31,9 +29,9 @@ SUBDIRS += \
     qml013_loader \
     qml014_dynamic_objects \
     qml015_context_properties \
-    qml016_extension_plugin \
+#    qml016_extension_plugin \
     qml016_plugin \
-    qml017_qsgnode \
+    qml017_qsg_node \
     qml018_multimedia \
     qml019_canvas \
     qml020_web \
