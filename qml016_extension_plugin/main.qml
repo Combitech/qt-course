@@ -1,28 +1,13 @@
 import QtQuick 2.4
+import plugin.combitech.components 1.0
 
 Rectangle {
     id: root
     anchors.fill: parent
     color: "lightgray"
 
-    ListModel {
+    CarModel {
         id: carModel
-        ListElement {
-            name: "Volvo XC60"
-            year: 2015
-        }
-        ListElement {
-            name: "Ferrari F50"
-            year: 2004
-        }
-        ListElement {
-            name: "Saab 9-3"
-            year: 2007
-        }
-        ListElement {
-            name: "Ford Mustang"
-            year: 1969
-        }
     }
 
     ListView {
@@ -35,7 +20,7 @@ Rectangle {
         model: carModel
         spacing: 5
 
-        /*
+
         add: Transition {
             NumberAnimation { properties: "scale"; from: 0; to: 1; duration: 750;}
         }
@@ -45,7 +30,7 @@ Rectangle {
         remove: Transition {
             NumberAnimation { properties: "scale"; from: 1; to: 0; duration: 750;}
         }
-        */
+
 
         delegate: Rectangle {
             id: carDelegate
